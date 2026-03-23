@@ -1,0 +1,269 @@
+
+
+.warppper{
+  max-width: 1440px;
+  margin: 0 auto; /* căn giữa trang web */
+}
+.container{
+  max-width: 1170px;
+  margin: 0 auto;   
+  padding: 0 15px;
+}
+body{ 
+  line-height: 1;
+  font-family: Rubik;
+  color: #4F5665;
+  font-weight: 400;
+  background-color: white;/* màu nền trắng */
+}
+.header-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 90px;/* khoảng cách giữa header và phần tử bên dưới */
+}
+/* // bấm vào đối tượng r nhấm phím alt để có thể đo khảng cách giữa các phần tử gap */
+.menu{
+  list-style: none; 
+  display: flex;
+  align-items: center; 
+  gap: 0 40px;
+
+}
+.menu-link{
+ color: inherit; /* kế thừa màu của body */
+ text-decoration: none; /* bỏ gạch chân */
+}
+.header-auth{
+  display: flex;
+  align-items: center;
+  gap : 0 30px ;
+  text-transform: capitalize; /* viết hoa chữ cái đầu */
+}
+.header-signin{
+  font-weight: 500;
+  color : #0B132A;
+  text-decoration: none;  
+  font-weight: 500;
+  font-weight: bold;
+    
+}
+.header-signup{
+  font-weight: 500;
+  color : #F53855;
+  padding: 13px 45px;
+  font-weight: bold; /* in đậm */
+  border-radius: 30px; /* bo tròn góc */
+  border: 1px solid #F53855;
+  text-decoration: none;
+}
+.hero{
+  padding-bottom: 100px;
+}
+.hero-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 40px;
+  position: relative; /*đi chung với position absolute của hình ảnh để có thể định vị hình ảnh một cách chính xác */
+}
+.hero-content{
+  width: 100%;
+  max-width: 555px;
+
+}
+.hero-image{
+  flex-shrink: 0; /* ngăn hình ảnh co lại */
+  position: absolute;/* để có thể định vị hình ảnh một cách chính xác , thì gap khong có tác dụng nữa*/
+  top: 50%; /* căn giữa theo chiều dọc */
+  right: 0; /* căn phải */
+  transform: translate(40px, -50%); /* 40 tức là X (gap khoảng các) , 50 là Y*/
+}
+.hero-heading{
+ font-size: 50px;
+ font-weight: 500;
+ margin-bottom: 20px;
+ line-height:calc(70/50);/* khoảng cách giữa các dòng  50 la fontsize*/
+color: #0B132A;
+}
+.hero-desc{
+  line-height: calc(30/16);
+  margin-bottom: 50px;
+  color: 4F5665;
+}
+.button{
+  display:inline-block; /* để có thể đặt padding và margin */
+  padding: 13px 45px;
+  border-radius: 100rem;/* bo tròn hoàn toàn */
+  font-weight: 500;
+  text-decoration: none;
+  line-height: 1; /* để đảm bảo chiều cao của nút không bị ảnh hưởng bởi line-height */
+  font-size: 16px;
+  color: #FFFFFF;
+  cursor: pointer; /* thay đổi con trỏ khi hover */
+position: relative; /* để có thể định vị phần tử giả sau nút */
+  outline: none; /* bỏ viền khi focus */
+}
+.button--primary{
+  background-color: #F53855;
+ font-weight: 700;
+ color: #FFFFFF; 
+ padding: 17.5px 78px;
+}
+.button--outline{
+  background-color: transparent;/* nền trong suốt */
+  color:#F53855 ;
+  font-weight: 500;
+  border : 1px solid #F53855 ;
+}
+.button--rounded{
+  border-radius: 10px;
+  padding: 17px 65px;
+  box-shadow: 0 30px 54px -5px rgba(245, 56, 56, 0.35); /* tạo hiệu ứng bóng đổ cho nút , chiều cao 60 lấy chia 2 , filter :blur là 54px */
+  
+}
+.button--shadow {
+    box-shadow: 0 20px 60px rgba(245,56,56,.35);
+}
+/* hoặc */
+.button--shadow::before {
+    content:"";
+    position:absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50% , 50%);
+    width: 90%;
+    height: 100%;
+    background-color: rgba(245,56,56,0.35);
+    filter: blur(54px);
+    border-radius: inherit;/* kế thừa border-radius của nút */
+    z-index:-1;
+    /* … */
+}
+
+.intro{
+  padding-bottom: 95px;
+}
+.intro-container{
+  border-radius: 10px;
+  background: #FFFFFF ;
+  padding: 37px 0;
+  box-shadow: 0 42px 114px 0 rgba(13,16,37,0.064); /* tạo hiệu ứng bóng đổ cho phần giới thiệu , chiều cao 84 lấy chia 2 , filter :blur là 114px */
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));/* nếu lớn 2 dùng git còn nhỏ hơn dùng flex chia thành 3 cột có kích thước bằng nhau , minmax(0,1fr) để đảm bảo rằng cột
+  có thể co lại khi màn hình nhỏ hơn */
+  min-height: 200px; /* đảm bảo phần đường kẻ cao hơn phần 90+ và nội dung đi theo  */
+}
+.intro-item{
+  display: flex;
+  align-items: center;
+  justify-content: center; /* căn giữa nội dung trong phần giới thiệu */
+  gap:36.5px; /* khoảng cách giữa hình ảnh và văn bản trong phần giới thiệu */
+  font-size: 20px;
+}
+h1,h2,h3,h4,h5,h6{
+  color: #0B132A;
+  font-weight: bold;
+}
+.intro title{
+  font-size: 25px;
+  margin-bottom: 5px;
+  line-height: calc(30/25); /* khoảng cách giữa các dòng trong phần tiêu đề giới thiệu */
+}
+.intro-text{
+  line-height: calc(30/20);/* khoảng cách giữa các dòng trong phần giới thiệu , 20 là line height*/
+  color: #4F5665;
+}
+.intro-item:nth-child(2){
+  border-left: 1px solid #EEEFF2; /* tạo đường viền bên trái cho phần giới thiệu thứ hai */
+  border-right: 1px solid #EEEFF2; /* tạo đường viền bên phải cho phần giới thiệu thứ hai */
+}
+.feature{
+  padding-bottom: 130px;
+
+}
+.feature-container{
+  display: flex;
+  align-items: flex-end; /* căn phần tử cuối cùng ở dưới cùng */
+  justify-content: space-between;
+  gap: 0 170px;
+
+}
+.heading{
+  font-family: Rubik;
+  line-height:calc(50/30);
+  font-size: 35px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-transform: capitalize; /* viết hoa chữ cái đầu */
+
+}
+.feature-desc{
+  margin-bottom: 23px;
+}
+.feature-list{
+  list-style-type: none;/* bỏ dấu chấm đầu dòng */
+}
+.feature-item{
+  display: flex;
+  align-items: center;
+  gap: 0 10px ;
+  margin-bottom: 21px; /* khoảng cách giữa các tính năng */
+}
+.plan{
+  padding: 80px 0 150px;
+  background-color: #FBFBFB;
+}
+.plan-header{
+  max-width: 555px;/* giới hạn chiều rộng của phần tiêu đề kế hoạch */
+  margin: 0 auto 60px; /* căn giữa phần tiêu đề kế hoạch và tạo khoảng cách phía dưới */
+  text-align: center;
+}
+.plan-list{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);/* chia thành 3 cột có kích thước bằng nhau */
+  grid-gap:0 50px;
+}
+.plan-item{
+  border: 2px solid #DDDDDD;
+  border-radius: 10px;
+  padding:80px 50px 50px;
+  display: flex;
+  flex-direction: column; /* sắp xếp phần tử theo chiều dọc */
+  align-items: center;
+}
+.plan-image{
+  margin: 0 auto 30px;/* căn giữa hình ảnh và tạo khoảng cách phía dưới */
+}
+.plan-title{
+  font-size: 18px;
+  margin-bottom: 30px;
+  
+}
+.plan-info{
+  display: flex;
+  align-items: center;
+  gap: 0 25px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: calc(30/14);
+}
+.plan-price{
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  margin-top: auto;
+}
+.plan-details{
+  margin-bottom: 50px;
+}
+.plan-item:nth-child(3){
+  border: 2px solid #F53855;
+}
+.boxed{
+  max-width: 555px;
+  margin-right: auto; /* căn trái phần tử */
+  margin-left: auto; /* căn phải phần tử */
+ 
+}
